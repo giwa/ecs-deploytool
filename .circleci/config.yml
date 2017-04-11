@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/ecs_deploytool
+    docker:
+      - image: python:3.6.0
+    steps:
+      - checkout
+      - run:
+          command: pip install pycodestyle
+      - run:
+          name: Run Tests
+          command: pycodestyle deploytool
+      - run:
+          name: Run Tests
+          command: pip install -e .

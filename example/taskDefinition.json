@@ -1,0 +1,16 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "web",
+            "image": "This param is replaced by the script",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 0
+                }
+            ],
+            "memory": 512,
+            "essential": true
+        }
+    ]
+}
