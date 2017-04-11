@@ -10,7 +10,7 @@ This script helps deloying docker image to ecs. ECS deploytool gives capabilitie
 ### Prerequisite `AWS_ACCESS_KEY` and `AWS_SECRET_KEY` are exposed as enviromental variables.
 
 ```
-Usage: deploytool [OPTIONS] CONFIG COMMAND [ARGS]...
+Usage: ecs-deploytool [OPTIONS] CONFIG COMMAND [ARGS]...
 
 Options:
   --env TEXT  Deploy environment
