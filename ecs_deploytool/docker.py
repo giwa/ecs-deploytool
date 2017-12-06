@@ -17,7 +17,7 @@ class Docker:
         Fetch a base image from ECR and tag it as base_image:latest
         """
         command_temp = """
-        eval $(aws ecr get-login --region {region})
+        eval $(aws ecr get-login --no-include-email --region {region})
         docker pull {ecr_url}/{image};
         docker tag  {ecr_url}/{image} {image};
         """
@@ -31,8 +31,8 @@ class Docker:
 
     def push_image(self, src_image, dst_image):
         command_temp = """
+        eval $(aws ecr get-login --no-include-email --region {region})
         docker tag {src_image} {ecr_url}/{dst_image};
-        eval $(aws ecr get-login --region {region});
         docker push {ecr_url}/{dst_image};
         docker rmi {ecr_url}/{dst_image};
         """
